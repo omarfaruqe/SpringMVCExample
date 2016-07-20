@@ -15,6 +15,16 @@ public class HelloController {
 
 		return model;
 	}
+	
+	@RequestMapping("/hi")
+	public ModelAndView hiWorld() {
+
+		ModelAndView model = new ModelAndView("index");
+		model.addObject("welcomeMessage","hi world");
+
+		return model;
+	}
+	
 
 }
 
