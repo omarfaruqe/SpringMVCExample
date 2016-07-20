@@ -19,7 +19,7 @@ public class StudentAdmissionController {
 	
 	@ModelAttribute
 	public void addingCommonObjects(Model model1){
-		model1.addAttribute("headerMessage","Montreal College of Management and Technology");
+		model1.addAttribute("headerMessage","Montreal College of Information and Technology");
 	}
 		
 	@RequestMapping(value="/submitAdmissionForm.html", method = RequestMethod.POST)
