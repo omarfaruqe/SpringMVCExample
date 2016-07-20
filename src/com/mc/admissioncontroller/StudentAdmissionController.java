@@ -3,12 +3,18 @@ package com.mc.admissioncontroller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class StudentAdmissionController {
 
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {		
+		binder.setDisallowedFields(new String[] {"studentMobile"});
+	}
+	
 	@RequestMapping(value="/admissionForm.html", method = RequestMethod.GET)
 	public ModelAndView getAdmissionForm() {
 
