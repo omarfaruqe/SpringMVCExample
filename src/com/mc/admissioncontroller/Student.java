@@ -2,8 +2,12 @@ package com.mc.admissioncontroller;
 
 import java.util.*;
 
+import javax.validation.constraints.Size;
+
 public class Student {
-	private String studentName, studentHobby;
+	private String studentName;
+	@Size(min=2, max=30) //Form Validation jars required
+	private String studentHobby;
 	private Long studentMobile;
 	private Date studentDOB;
 	private ArrayList<String> studentSkills;
