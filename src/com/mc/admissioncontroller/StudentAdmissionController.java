@@ -14,11 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class StudentAdmissionController {
 
+	//Reference Table 9.2. Built-in PropertyEditors in http://docs.spring.io/spring/docs/current/spring-framework-reference/html/validation.html
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {		
 		binder.setDisallowedFields(new String[] {"studentMobile"});
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy****MM****dd");
 		binder.registerCustomEditor(Date.class, "studentDOB", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(String.class, "studentName", new StudentNameEditor());
 	}
 	
 	@RequestMapping(value="/admissionForm.html", method = RequestMethod.GET)
