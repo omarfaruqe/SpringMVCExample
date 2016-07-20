@@ -1,42 +1,43 @@
 package com.mc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/greet")
+//@RequestMapping("/greet")
 public class HelloController {
 
-	@RequestMapping("/welcome")
-	public ModelAndView helloWorld() {
+	@RequestMapping("/welcome/{countryName}/{userName}")
+	public ModelAndView helloWorld(@PathVariable("userName") String name, @PathVariable("countryName") String country) {
 
 		ModelAndView model = new ModelAndView("index");
-		model.addObject("welcomeMessage","hello world");
+		model.addObject("welcomeMessage","hello "+name+" You are from "+country);
 
 		return model;
 	}
 	
-	@RequestMapping("/hi")
-	public ModelAndView hiWorld() {
-
-		ModelAndView model = new ModelAndView("index");
-		model.addObject("welcomeMessage","hi world");
-
-		return model;
-	}
-	
-	@RequestMapping("/")
-	public ModelAndView rootWorld() {
-
-		ModelAndView model = new ModelAndView("index");
-		model.addObject("welcomeMessage","Root world");
-
-		return model;
-	}
-	
-
 }
+
+//	@RequestMapping("/hi")
+//	public ModelAndView hiWorld() {
+//
+//		ModelAndView model = new ModelAndView("index");
+//		model.addObject("welcomeMessage","hi world");
+//
+//		return model;
+//	}
+//	
+//	@RequestMapping("/")
+//	public ModelAndView rootWorld() {
+//
+//		ModelAndView model = new ModelAndView("index");
+//		model.addObject("welcomeMessage","Root world");
+//
+//		return model;
+//	}
+//	
 
 //public class HelloController extends AbstractController{
 // 
