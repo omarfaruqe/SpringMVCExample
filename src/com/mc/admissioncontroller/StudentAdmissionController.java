@@ -2,6 +2,7 @@ package com.mc.admissioncontroller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -12,7 +13,7 @@ public class StudentAdmissionController {
 	public ModelAndView getAdmissionForm() {
 
 		ModelAndView model = new ModelAndView("AdmissionForm");
-//model.addObject("headerMessage","Montreal College of Management and Technology");
+		
 		return model;
 	}
 	
@@ -22,10 +23,14 @@ public class StudentAdmissionController {
 	}
 		
 	@RequestMapping(value="/submitAdmissionForm.html", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student1) {
+	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student1, BindingResult result) {
+
+		if(result.hasErrors()){
+			ModelAndView model1 = new ModelAndView("AdmissionForm");
+			return model1;
+		}
 
 		ModelAndView model = new ModelAndView("AdmissionSuccess");
-//model.addObject("headerMessage","MT College");
 
 		return model;
 	}

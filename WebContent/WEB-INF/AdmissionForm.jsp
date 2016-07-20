@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!-- Error handing tag for form error -->
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +13,8 @@
 
 <h1>${headerMessage}</h1>
 
+	<form:errors path="student1.*"/>
+	
 	<form action="/SpringMVCExample/submitAdmissionForm.html" method="post">
 	
 	<table>
