@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>${msg}</h2>
+
+	<table>
+		<tr>
+			<td>Student Name :</td>
+			<td>${student1.studentName}</td>
+		</tr>
+		<tr>
+			<td>Student Hobby :</td>
+			<td>${student1.studentHobby}</td>
+		</tr>
+	
+	</table>
 </body>
 </html>
