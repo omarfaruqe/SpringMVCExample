@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<h1>${headerMessage}</h1>
+
 	<form action="/SpringMVCExample/submitAdmissionForm.html" method="post">
 		<p>
 			Student's Name : <input type="text" name="studentName" />
