@@ -25,6 +25,15 @@ public class HelloController {
 		return model;
 	}
 	
+	@RequestMapping("/")
+	public ModelAndView rootWorld() {
+
+		ModelAndView model = new ModelAndView("index");
+		model.addObject("welcomeMessage","Root world");
+
+		return model;
+	}
+	
 
 }
 
