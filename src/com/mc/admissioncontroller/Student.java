@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 public class Student {
 	private String studentName;
-	@Size(min=2, max=30) //Form Validation jars required
+	@Size(min=2, max=30, message = "Please enter a value for student hobby field between {min} and {max} characters") //Form Validation jars required
 	private String studentHobby;
 	private Long studentMobile;
 	private Date studentDOB;
