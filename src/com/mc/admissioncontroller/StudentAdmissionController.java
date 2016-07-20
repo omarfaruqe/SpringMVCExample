@@ -19,29 +19,18 @@ public class StudentAdmissionController {
 
 		return model;
 	}
-	
-//	@RequestMapping(value="/submitAdmissionForm.html", method = RequestMethod.POST)
-//	public ModelAndView submitAdmissionForm(@RequestParam Map<String,String> reqPar) {
-//
-//		String name = reqPar.get("studentName");
-//		String hobby = reqPar.get("studentHobby");
-//
-//		ModelAndView model = new ModelAndView("AdmissionSuccess");
-//		model.addObject("msg","Details submitted by you:: Name: "+name+ ", Hobby: " + hobby);
-//
-//		return model;
-//	}
-	
+		
 	@RequestMapping(value="/submitAdmissionForm.html", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@RequestParam("studentName") String name, @RequestParam("studentHobby") String hobby) {
-
-		Student student1 = new Student();
-		student1.setStudentName(name);
-		student1.setStudentHobby(hobby);
+//	public ModelAndView submitAdmissionForm(@RequestParam("studentName") String name, @RequestParam("studentHobby") String hobby) {
+	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student1) {
+		
+//		Student student1 = new Student();
+//		student1.setStudentName(name);
+//		student1.setStudentHobby(hobby);
 
 		ModelAndView model = new ModelAndView("AdmissionSuccess");
 		model.addObject("headerMessage","MT College");
-		model.addObject("student1",student1);
+//		model.addObject("student1",student1);
 		
 		return model;
 	}
