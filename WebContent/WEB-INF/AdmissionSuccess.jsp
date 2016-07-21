@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Spring MVC Example</title>
+<title>Student Admission Form</title>
 </head>
 <body>
 
