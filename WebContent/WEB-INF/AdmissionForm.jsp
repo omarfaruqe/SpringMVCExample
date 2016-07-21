@@ -11,6 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="/SpringMVCExample/admissionForm.html?siteLanguage=en">English</a>|
+<a href="/SpringMVCExample/admissionForm.html?siteLanguage=fr">French</a>
 
 <h1><spring:message code="label.admissionForm"/></h1>
 
