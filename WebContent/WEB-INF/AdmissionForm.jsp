@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Student Admission Form</title>
 </head>
 <body>
 <a href="/SpringMVCExample/admissionForm.html?siteLanguage=en">English</a>|
