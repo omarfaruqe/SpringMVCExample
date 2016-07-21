@@ -11,7 +11,7 @@ public class Student {
 	@Pattern(regexp="[^0-9]*")
 	private String studentName;
 	
-	@Size(min=2, max=30) @IsValidHobby //, message = "Please enter a value for student hobby field between {min} and {max} characters") //Form Validation jars required
+	@Size(min=2, max=30) @IsValidHobby(listOfValidHobbies = "Music|Football|Cricket|Hockey") //, message = "Please enter a value for student hobby field between {min} and {max} characters") //Form Validation jars required
 	private String studentHobby;
 	
 	@Max(9999)
