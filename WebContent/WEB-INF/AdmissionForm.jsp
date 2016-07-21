@@ -11,13 +11,18 @@
 <title>Student Admission Form</title>
 </head>
 <body>
-<a href="/SpringMVCExample/admissionForm.html?siteLanguage=en">English</a>|
+<link rel="stylesheet" href="<spring:theme code='stylesheet'/>" type="text/css"/>
+
+<p><a href="/SpringMVCExample/admissionForm.html?siteTheme=green">Green</a> |
+<a href="/SpringMVCExample/admissionForm.html?siteTheme=red">Red</a></p>
+
+<a href="/SpringMVCExample/admissionForm.html?siteLanguage=en">English</a> |
 <a href="/SpringMVCExample/admissionForm.html?siteLanguage=fr">French</a>
 
 <h1><spring:message code="label.admissionForm"/></h1>
 
 <%-- <h1>${headerMessage}</h1> --%>
-<h1><spring:message code="label.headerMessage"/></h1>
+<h2><spring:message code="label.headerMessage"/></h2>
 
 	<form:errors path="student1.*"/>
 	
