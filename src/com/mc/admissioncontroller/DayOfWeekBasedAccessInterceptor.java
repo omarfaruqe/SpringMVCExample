@@ -1,0 +1,30 @@
+package com.mc.admissioncontroller;
+
+import java.util.Calendar;
+
+import javax.servlet.http.*;
+
+import org.springframework.web.servlet.handler.*;
+
+public class DayOfWeekBasedAccessInterceptor extends HandlerInterceptorAdapter{
+
+	@Override
+	public boolean preHandle(HttpServletRequest request,
+			HttpServletResponse response, Object handler) throws Exception {
+		
+		Calendar cal = Calendar.getInstance(); 
+			
+			int dayOfWeek = cal.get(cal.DAY_OF_WEEK);  //getting the day on which request is made
+			
+			if(dayOfWeek == 1) { // 1 means Sunday, 2 means Monday....7 means Saturday
+				
+				response.getWriter().write("The Website is closed on holiday; please try accessing it on any other week day!!");
+				
+				return false;
+			}
+			
+			return true;
+
+	}
+
+}
