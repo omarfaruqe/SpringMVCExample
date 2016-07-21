@@ -14,7 +14,10 @@
 	<mvc:annotation-driven />
 
 	<mvc:interceptors>
-		<bean class="com.mc.admissioncontroller.DayOfWeekBasedAccessInterceptor" />
+		<mvc:interceptor>
+			<mvc:mapping path="/admissionForm.html" />
+			<bean class="com.mc.admissioncontroller.DayOfWeekBasedAccessInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 	<bean id="viewResolver"
