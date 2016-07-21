@@ -23,6 +23,12 @@
 			<property name="paramName" value="siteLanguage" />
 		</bean>
 
+		<!-- Supporting Multiple Themes -->
+		<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+			<property name="paramName" value="siteTheme" />
+		</bean>
+
+
 	</mvc:interceptors>
 
 	<bean id="viewResolver"
@@ -35,6 +41,8 @@
 		</property>
 	</bean>
 
+	<mvc:resources location="/WEB-INF/" mapping="/resources/**"></mvc:resources>
+
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="/WEB-INF/studentmessages" />
@@ -43,10 +51,23 @@
 		<property name="cacheSeconds" value="1"></property>
 	</bean>
 
-	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-		<property name="defaultLocale" value="en"/>
-		<property name="cookieName" value="localeCookie"/>
-		<property name="cookieMaxAge" value="3600"/>
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="defaultLocale" value="en" />
+		<property name="cookieName" value="localeCookie" />
+		<property name="cookieMaxAge" value="3600" />
 	</bean>
 
+
+
+	<!-- Supporting Multiple Themes -->
+	<bean id="themeSource"
+		class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+		<property name="basenamePrefix" value="theme-" />
+	</bean>
+
+	<bean id="themeResolver"
+		class="org.springframework.web.servlet.theme.CookieThemeResolver">
+		<property name="defaultThemeName" value="green" />
+	</bean>
 </beans>
