@@ -2,9 +2,22 @@ package com.mc.admissioncontroller;
 
 import java.util.*;
 
+import javax.validation.constraints.*;
+
 public class Student {
-	private String studentName, studentHobby;
+
+	//Some other Annotation @Future, @Min, @NotNull, @NotEmpty
+	
+	@Pattern(regexp="[^0-9]*")
+	private String studentName;
+	
+	@Size(min=2, max=30) @IsValidHobby(listOfValidHobbies = "Music|Football|Cricket|Hockey") //, message = "Please enter a value for student hobby field between {min} and {max} characters") //Form Validation jars required
+	private String studentHobby;
+	
+	@Max(9999)
 	private Long studentMobile;
+	
+	@Past
 	private Date studentDOB;
 	private ArrayList<String> studentSkills;
 
